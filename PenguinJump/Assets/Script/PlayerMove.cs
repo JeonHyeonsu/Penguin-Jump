@@ -75,8 +75,6 @@ public class PlayerMove : MonoBehaviour
         if(isWall)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * slidingSpeed);
-
-            
         }
 
 
@@ -90,7 +88,6 @@ public class PlayerMove : MonoBehaviour
         if (rigid.velocity.y > maxSpeed)
             rigid.velocity = new Vector2(rigid.velocity.x, maxSpeed);
 
-        //Debug.Log("현재힘 : " + rigid.velocity.magnitude);
     }
 
     void Update()
@@ -102,10 +99,10 @@ public class PlayerMove : MonoBehaviour
         }
         isGrounded = Physics2D.OverlapCircle(groundSpot.position, 0.2f, groundLayer);
 
-        //캐릭터 보는 방향
+        //???? ?? ??
         CheckDirection();
 
-        //벽점프
+        //?? ???? ??
         isWall = Physics2D.Raycast(wallChk.position, Vector2.right * isRight, wallChkDistance, wall_Layer);
 
         //animator
@@ -299,7 +296,6 @@ public class PlayerMove : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             OnDamaged(collision.transform.position);
-            Debug.Log("적이랑만남");
         }
     }
     /*
@@ -308,7 +304,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             OnDamaged(collision.transform.position);
-            Debug.Log("적이랑만남 Trigger");
+            Debug.Log("?????????? Trigger");
         }
     }
     */
@@ -316,9 +312,11 @@ public class PlayerMove : MonoBehaviour
     {
         isDamaged = true;
 
-        int dirc = transform.position.y - targetPos.y > 0 ? 1 : -1;
+        int dircY = transform.position.y - targetPos.y > 0 ? 1 : -1; // 1? ??? ?? -1? ??? ??
+        int dircX = transform.position.x - targetPos.x > 0 ? 1 : -1; // 1? ?? ?? -1? ??? ??
 
-        rigid.AddForce(new Vector2(-1, dirc) * DamagedForce, ForceMode2D.Impulse);
+
+        rigid.AddForce(new Vector2(-1, dircY) * DamagedForce, ForceMode2D.Impulse);
 
         animator.SetBool("damaged", true);
         animator.SetTrigger("Damaged");

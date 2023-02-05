@@ -19,9 +19,9 @@ public class FallingPlatforms : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("충돌지점 : " + collision.contacts[0].normal.y);
+            Debug.Log("???? : " + collision.contacts[0].normal.y);
 
-            if(collision.contacts[0].normal.y <= -0.9f && collision.contacts[0].normal.y >= -1f) //플랫폼 위쪽에서 충돌이 왔을때
+            if(collision.contacts[0].normal.y <= -0.9f && collision.contacts[0].normal.y >= -1f) //?? ??? ???? ?? 1?? ??? ??
             {
                 StartCoroutine(Fall());
             }
