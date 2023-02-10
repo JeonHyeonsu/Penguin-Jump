@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject[] level;
+    public Transform[] levelposition;
+
+
+
     void Start()
     {
-        
+        Instantiate(level[0], levelposition[0].position, levelposition[0].rotation);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

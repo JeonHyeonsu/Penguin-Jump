@@ -290,7 +290,7 @@ public class PlayerMove : MonoBehaviour
         isDashing = false;
         rigid.gravityScale = normalGravity;
     }
-
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
@@ -298,13 +298,13 @@ public class PlayerMove : MonoBehaviour
             OnDamaged(collision.transform.position);
         }
     }
+    
     /*
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             OnDamaged(collision.transform.position);
-            Debug.Log("?????????? Trigger");
         }
     }
     */
