@@ -13,10 +13,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.CompareTag("Player"))
         {
             rigid.isKinematic = false;
-            Debug.Log("플레이어감지");
+            Debug.Log("????????????");
             Destroy(this,5);
         }
     }

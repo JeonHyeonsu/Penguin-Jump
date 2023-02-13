@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3685665487631925326}
   - component: {fileID: 3685665487631925316}
   m_Layer: 8
-  m_Name: penguin
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

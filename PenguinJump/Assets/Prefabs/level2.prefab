@@ -25036,7 +25036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746089651547256832, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 195.98
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 2746089651547256832, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25077,6 +25077,14 @@ PrefabInstance:
     - target: {fileID: 7543647238335856370, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
       propertyPath: m_Name
       value: Hole (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743231283951151304, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743231283951151304, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
@@ -25829,6 +25837,14 @@ PrefabInstance:
     - target: {fileID: 7543647238335856370, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
       propertyPath: m_Name
       value: Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743231283951151304, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743231283951151304, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ebf876e4eeb495c8de373f166a2369, type: 3}

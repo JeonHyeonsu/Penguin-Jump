@@ -39,9 +39,13 @@ public class PlayerMove : MonoBehaviour
     float isRight = 1;
 
 
-    [SerializeField] bool isDamaged = false;
+    //[SerializeField] bool isDamaged = false;
+    public bool isDamaged = false;
     [SerializeField] float maxSpeed = 20f;
     public ParticleSystem damagedparticle;
+    private Vector2 originScale;
+    private float size = 0.2f;
+    private float shrinkSpeed = 0.3f;
 
     //public GameObject Damagedeffect;
 
@@ -59,6 +63,7 @@ public class PlayerMove : MonoBehaviour
     {
         isFacingctrl = true;
         canDash = true;
+        originScale = transform.localScale;
     }
 
     void FixedUpdate()
@@ -299,15 +304,15 @@ public class PlayerMove : MonoBehaviour
         }
     }
     
-    /*
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.CompareTag("Finish"))
         {
-            OnDamaged(collision.transform.position);
+            //GameManager.instance.RestartStage();
         }
     }
-    */
+    
     public void OnDamaged(Vector2 targetPos)
     {
         isDamaged = true;
@@ -345,5 +350,16 @@ public class PlayerMove : MonoBehaviour
     void Frozen()
     {
         isDamaged = false;
+    }
+
+    public void PlayerScale()
+    {
+            transform.localScale = new Vector2(transform.localScale.x - originScale.x * shrinkSpeed * Time.deltaTime,
+                                               transform.localScale.y - originScale.y * shrinkSpeed * Time.deltaTime);
+    }
+
+    public void OnDisableScale()
+    {
+        gameObject.transform.localScale = originScale;
     }
 }
