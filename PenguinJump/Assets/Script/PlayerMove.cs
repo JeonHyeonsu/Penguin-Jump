@@ -298,7 +298,7 @@ public class PlayerMove : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.CompareTag("Enemy"))
         {
             OnDamaged(collision.transform.position);
         }
@@ -309,7 +309,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.CompareTag("Finish"))
         {
-            //GameManager.instance.RestartStage();
+            GameManager.instance.NextLevel();
         }
     }
     
