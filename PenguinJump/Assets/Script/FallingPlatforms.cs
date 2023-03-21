@@ -19,9 +19,7 @@ public class FallingPlatforms : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("???? : " + collision.contacts[0].normal.y);
-
-            if(collision.contacts[0].normal.y <= -0.9f && collision.contacts[0].normal.y >= -1f) //?? ??? ???? ?? 1?? ??? ??
+            if(collision.contacts[0].normal.y <= -0.9f && collision.contacts[0].normal.y >= -1f)
             {
                 StartCoroutine(Fall());
             }

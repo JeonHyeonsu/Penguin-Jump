@@ -46,6 +46,7 @@ public class PlayerMove : MonoBehaviour
     private Vector2 originScale;
     private float size = 0.2f;
     private float shrinkSpeed = 0.3f;
+    public int hitCount = 1;
 
     //public GameObject Damagedeffect;
 
@@ -81,10 +82,6 @@ public class PlayerMove : MonoBehaviour
         {
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * slidingSpeed);
         }
-
-
-
-
 
         //Max Speed
         if (rigid.velocity.x < maxSpeed * (-1))
@@ -309,7 +306,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.CompareTag("Finish"))
         {
-            GameManager.instance.NextLevel();
+            GameManager.instance.GameEnd();
         }
     }
     
@@ -317,9 +314,10 @@ public class PlayerMove : MonoBehaviour
     {
         isDamaged = true;
 
+        GameManager.instance.HitCount(hitCount);
+
         int dircY = transform.position.y - targetPos.y > 0 ? 1 : -1; // 1? ??? ?? -1? ??? ??
         int dircX = transform.position.x - targetPos.x > 0 ? 1 : -1; // 1? ?? ?? -1? ??? ??
-
 
         rigid.AddForce(new Vector2(-1, dircY) * DamagedForce, ForceMode2D.Impulse);
 
