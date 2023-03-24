@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public Text coinText;
 
     //스테이지 넘버
-    public int stageNumber;
+    private int stageNumber;
 
 
 
@@ -44,14 +44,25 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(!PlayerPrefs.HasKey("Stage"))
+        {
+            PlayerPrefs.SetInt("Stage", 0);
+        }
+        stageNumber = PlayerPrefs.GetInt("Stage");
     }
 
     void Start()
     {
         Debug.Log("PlayerPrefs Stage : " + PlayerPrefs.GetInt("Stage"));
 
-        //Instantiate(level[1], levelposition[0].position, levelposition[0].rotation);
-        Instantiate(level[PlayerPrefs.GetInt("Stage")]);
+        if(stageNumber >= level.Length)
+        {
+            Instantiate(level[stageNumber - 1]);
+        }
+        else
+        {
+            Instantiate(level[stageNumber]);
+        }
         ResetSlider();
     }
 
@@ -74,8 +85,7 @@ public class GameManager : MonoBehaviour
         //Stage를 증가시켜서 다음 스테이지 해금
         //if ((stageNumber + 1) > PlayerPrefs.GetInt("Stage"))
         //{
-            PlayerPrefs.SetInt("Stage", PlayerPrefs.GetInt("Stage") + 1);
-            stageNumber += 1;
+        PlayerPrefs.SetInt("Stage", PlayerPrefs.GetInt("Stage") + 1);
         //}
 
         SceneManager.LoadScene("StageClear");

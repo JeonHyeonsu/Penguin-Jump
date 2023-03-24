@@ -108,11 +108,11 @@ public class UIManager : MonoBehaviour
             {
                 SceneManager.LoadScene("GameScene");
             }
+        }
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                SceneManager.LoadScene("GameScene");
-            }
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("GameScene");
         }
     }
 

@@ -201,7 +201,7 @@ public class PlayerMove : MonoBehaviour
             if (context.performed)
             {
                 isDamaged = true;
-                Invoke("Frozen", 0.45f);
+                Invoke("Frozen", 0.3f);
                 rigid.velocity = new Vector2(-isRight * jumpDistance, 0.9f * jumpDistance);
                 Flip();
             }
