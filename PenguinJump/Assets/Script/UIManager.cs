@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
 
     }
 
+    //
     public void RankUpdate()
     {
         score = coinCountP - (((int)gameTimeP / 10) + (hitCountP / 5));
